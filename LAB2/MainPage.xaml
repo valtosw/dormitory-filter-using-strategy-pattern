@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAB2.MainPage">
+
+    <ScrollView>
+        <StackLayout Padding="20" Spacing="10">
+            <Label Text="XML Document Analysis" FontSize="Large" HorizontalOptions="Center" />
+
+            <StackLayout Padding="20" Spacing="10" Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Load XML File" Clicked="OnLoadFileClicked" />
+                <Button Text="Analyze" Clicked="OnAnalyzeClicked" />
+                <Button Text="Transform to HTML" Clicked="OnTransformClicked" />
+                <Button Text="Clear" Clicked="OnClearClicked" />
+                <Button Text="Exit" Clicked="OnExitClicked" />
+            </StackLayout>
+
+            <Picker x:Name="ParserPicker" Title="Choose Parser">
+                <Picker.Items>
+                    <x:String>SAX API</x:String>
+                    <x:String>DOM API</x:String>
+                    <x:String>LINQ to XML</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <VerticalStackLayout x:Name="DynamicPickersContainer" Padding="10" />
+            
+            <Label Text="Results:" FontAttributes="Bold" />
+            <Label x:Name="ResultsLabel" Text="Results will appear here..." />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
